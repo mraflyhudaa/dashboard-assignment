@@ -7,7 +7,7 @@ import { useBarang } from '@/hooks/useBarang';
 import { useDebounce } from '@/hooks/useDebounce';
 import { useState } from 'react';
 
-export default function Barang() {
+function Barang() {
   const [isOpen, setIsOpen] = useState(false);
   const [page, setPage] = useState(1);
   const [searchValue, setSearchValue] = useState('');
@@ -112,3 +112,8 @@ export default function Barang() {
     </Layout>
   );
 }
+
+Barang.requiresAuth = true;
+Barang.redirectUnauthenticated = '/login';
+
+export default Barang;
