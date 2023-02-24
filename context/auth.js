@@ -25,7 +25,6 @@ export const AuthProvider = ({ children }) => {
     unauthenticateAPI();
     setUser(null);
     setIsLoading(false);
-    console.log('Redirecting');
     router.push(redirectLocation || '/login');
   };
 
@@ -39,7 +38,6 @@ export const AuthProvider = ({ children }) => {
       Cookies.set('token', token);
       Cookies.set('user', username);
     } catch (error) {
-      console.log({ error });
       unauthenticateAPI();
       setUser(null);
       Cookies.remove('token');

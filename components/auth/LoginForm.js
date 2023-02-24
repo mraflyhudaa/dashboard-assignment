@@ -27,14 +27,14 @@ export default function LoginForm() {
       const res = await api.post('auth/login', formData);
       const { message } = res.data;
       if (message == 'LOGIN SUCCESS') {
-        console.log(res.data.data);
+        toast.success(message);
         const { token, username } = res.data.data;
         authenticate(token, username);
         router.push('/barang');
       }
-      toast.error(message);
+      toast.info(message);
     } catch (error) {
-      console.log(error);
+      console.error(error.response.data.error);
     }
   };
   return (

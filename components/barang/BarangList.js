@@ -23,8 +23,6 @@ export default function BarangList({
     setSelectedRow(row);
   };
 
-  console.log(barangs);
-
   return (
     <>
       <table className='z-0 w-full text-sm text-left text-gray-500'>

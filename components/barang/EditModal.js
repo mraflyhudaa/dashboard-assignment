@@ -17,7 +17,6 @@ export default function EditModal({ setShowEdit, barang }) {
       ...prevState,
       [e.target.name]: e.target.value,
     }));
-    console.log(formData);
   };
 
   function onInput() {
